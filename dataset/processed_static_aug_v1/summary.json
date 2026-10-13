@@ -1,0 +1,38 @@
+{
+  "number_1": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 60
+  },
+  "number_2": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 63
+  },
+  "number_3": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 58
+  },
+  "number_4": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 68
+  },
+  "number_5": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 61
+  },
+  "unknown": {
+    "total": 80,
+    "ok": 80,
+    "no_hand": 0,
+    "touches_edge": 59
+  }
+}

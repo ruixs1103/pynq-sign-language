@@ -6,25 +6,24 @@ import cv2
 import numpy as np
 
 from labels import STATIC_LABELS
+from static_numpy_features import (
+    FEATURE_VERSION,
+    extract_static_feature_from_path,
+)
 
 IMG_EXTS = (".png",)
 
 
 def _feature_from_binary(path):
-    img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        return None
-    binary = cv2.resize((img > 0).astype(np.float32), (128, 128),
-                        interpolation=cv2.INTER_NEAREST)
-    x = binary.reshape(-1)
-    norm = np.linalg.norm(x)
-    return x / (norm + 1e-8)
+    return extract_static_feature_from_path(path)
 
 
 def train(input_dir, model_out):
     centroids = []
     labels = []
     counts = {}
+    prototypes = []
+    prototype_label_indices = []
 
     for label in STATIC_LABELS:
         label_dir = os.path.join(input_dir, label)
@@ -44,6 +43,10 @@ def train(input_dir, model_out):
         centroids.append(centroid.astype(np.float32))
         labels.append(label)
         counts[label] = len(features)
+        label_index = len(labels) - 1
+        for feat in features:
+            prototypes.append(feat.astype(np.float32))
+            prototype_label_indices.append(label_index)
 
     if not centroids:
         raise SystemExit("no training images found")
@@ -54,8 +57,18 @@ def train(input_dir, model_out):
         centroids=np.stack(centroids).astype(np.float32),
         labels=np.array(labels),
         counts=np.array([counts[label] for label in labels], dtype=np.int32),
+        prototypes=np.stack(prototypes).astype(np.float32),
+        prototype_label_indices=np.array(prototype_label_indices, dtype=np.int32),
+        feature_version=np.array(FEATURE_VERSION),
     )
-    return {"model": model_out, "labels": labels, "counts": counts}
+    return {
+        "model": model_out,
+        "feature_version": FEATURE_VERSION,
+        "feature_dim": int(centroids[0].shape[0]),
+        "labels": labels,
+        "counts": counts,
+        "prototype_count": len(prototypes),
+    }
 
 
 def main():

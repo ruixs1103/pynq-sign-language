@@ -2085,6 +2085,9 @@
         "parameters": {
           "c_include_sg": {
             "value": "0"
+          },
+          "c_sg_length_width": {
+            "value": "26"
           }
         },
         "interface_ports": {
@@ -2368,6 +2371,10 @@
             "interface_ports": {
               "S00_AXI": {
                 "bd_attributes": {
+                  "BRIDGES": {
+                    "value": "M00_AXI",
+                    "value_src": "auto"
+                  },
                   "TYPE": {
                     "value": "interior",
                     "value_src": "default"
@@ -2389,6 +2396,10 @@
               },
               "S01_AXI": {
                 "bd_attributes": {
+                  "BRIDGES": {
+                    "value": "M00_AXI",
+                    "value_src": "auto"
+                  },
                   "TYPE": {
                     "value": "interior",
                     "value_src": "default"

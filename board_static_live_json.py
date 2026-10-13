@@ -15,6 +15,20 @@ def main():
     ap.add_argument("--interval", type=float, default=0.8)
     ap.add_argument("--output", default="report/latest_static_result.json")
     ap.add_argument("--save-frame", default="report/latest_static_frame.jpg")
+    ap.add_argument("--backend", default="cpu", choices=("cpu", "pl"))
+    ap.add_argument(
+        "--overlay",
+        default="board/overlays/sign_preprocess_2026_1/sign_preprocess_2026_1.bit",
+    )
+    ap.add_argument("--dma-name", default="axi_dma_0")
+    ap.add_argument("--ip-name", default="image_preprocess_0")
+    ap.add_argument("--pl-frame-size", type=int, default=360)
+    ap.add_argument(
+        "--pl-input-layout",
+        default="packed_rgb",
+        choices=("packed_rgb", "rgbx32"),
+    )
+    ap.add_argument("--pl-timeout", type=float, default=3.0)
     args = ap.parse_args()
 
     output = Path(args.output)
@@ -22,7 +36,22 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     save_frame.parent.mkdir(parents=True, exist_ok=True)
 
-    predictor = NumpyStaticPredictor(args.model)
+    preprocess_fn = None
+    if args.backend == "pl":
+        from pl_preprocess import PLPreprocessor
+
+        pl = PLPreprocessor(
+            overlay_path=args.overlay,
+            dma_name=args.dma_name,
+            ip_name=args.ip_name,
+            frame_size=args.pl_frame_size,
+            input_layout=args.pl_input_layout,
+            timeout_s=args.pl_timeout,
+        )
+        print(json.dumps({"pl": pl.diagnostics()}, ensure_ascii=False, indent=2))
+        preprocess_fn = pl.preprocess_frame
+
+    predictor = NumpyStaticPredictor(args.model, preprocess_fn=preprocess_fn)
 
     cap = cv2.VideoCapture(args.camera, cv2.CAP_V4L2)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
@@ -32,6 +61,7 @@ def main():
         raise SystemExit(f"camera open failed: {args.camera}")
 
     print("live json app started. Interrupt the kernel or press Ctrl+C to stop.")
+    print(f"backend={args.backend}")
     count = 0
     try:
         while True:

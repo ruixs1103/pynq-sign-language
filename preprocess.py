@@ -109,3 +109,49 @@ def preprocess_frame(frame_bgr, size=IMG_SIZE, ycrcb_min=None, ycrcb_max=None):
     })
     binary = normalize_binary(comp, size=size)
     return binary, info
+
+
+def preprocess_mask(mask, size=IMG_SIZE):
+    """Use an existing 0/255 mask as the segmentation result.
+
+    This is the bridge for PL acceleration: PL can produce the full-frame mask,
+    then PS still handles largest component selection, metadata extraction and
+    128x128 normalization exactly like the CPU path.
+    """
+    mask = np.asarray(mask)
+    if mask.ndim == 3:
+        mask = cv2.cvtColor(mask[:, :, :3], cv2.COLOR_BGR2GRAY)
+    mask = (mask > 0).astype(np.uint8) * 255
+    info = {
+        "hand_found": False,
+        "area": 0,
+        "bbox": (0, 0, 0, 0),
+        "centroid": (0.0, 0.0),
+        "touches_edge": False,
+        "angle": 0.0,
+        "frame_w": int(mask.shape[1]),
+        "frame_h": int(mask.shape[0]),
+    }
+    comp = largest_component(mask)
+    if comp is None:
+        return None, info
+    ys, xs = np.nonzero(comp)
+    x0, x1 = int(xs.min()), int(xs.max())
+    y0, y1 = int(ys.min()), int(ys.max())
+    h_img, w_img = comp.shape
+    angle = 0.0
+    contours, _ = cv2.findContours(comp, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if contours:
+        biggest = max(contours, key=cv2.contourArea)
+        angle = float(cv2.minAreaRect(biggest)[2] % 180.0)
+    info.update({
+        "hand_found": True,
+        "area": int((comp > 0).sum()),
+        "bbox": (x0, y0, x1 - x0 + 1, y1 - y0 + 1),
+        "centroid": (float(xs.mean()), float(ys.mean())),
+        "touches_edge": bool(
+            x0 == 0 or y0 == 0 or x1 == w_img - 1 or y1 == h_img - 1),
+        "angle": angle,
+    })
+    binary = normalize_binary(comp, size=size)
+    return binary, info

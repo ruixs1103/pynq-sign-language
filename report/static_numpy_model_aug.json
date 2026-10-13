@@ -1,0 +1,22 @@
+{
+  "model": "models\\static_numpy_model.npz",
+  "feature_version": "shape_v2",
+  "feature_dim": 1176,
+  "labels": [
+    "number_1",
+    "number_2",
+    "number_3",
+    "number_4",
+    "number_5",
+    "unknown"
+  ],
+  "counts": {
+    "number_1": 80,
+    "number_2": 80,
+    "number_3": 80,
+    "number_4": 80,
+    "number_5": 80,
+    "unknown": 122
+  },
+  "prototype_count": 522
+}
