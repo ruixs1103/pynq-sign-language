@@ -1,0 +1,29 @@
+{
+  "count": 87,
+  "timestamp": 1746313915.1143625,
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 1.0,
+    "kind": "static",
+    "timestamp": 1746313915.104343
+  },
+  "preprocess": {
+    "hand_found": false,
+    "area": 0,
+    "bbox": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "centroid": [
+      0.0,
+      0.0
+    ],
+    "touches_edge": false,
+    "angle": 0.0,
+    "frame_w": 320,
+    "frame_h": 240
+  }
+}

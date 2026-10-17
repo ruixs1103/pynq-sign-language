@@ -1,0 +1,27 @@
+{
+  "result": {
+    "label": "number_5",
+    "text": "五",
+    "confidence": 0.9133,
+    "kind": "static",
+    "timestamp": 1746310164.8828795
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 5841,
+    "bbox": [
+      64,
+      64,
+      74,
+      106
+    ],
+    "centroid": [
+      100.44547166581064,
+      115.69936654682418
+    ],
+    "touches_edge": false,
+    "angle": 11.309932708740234,
+    "frame_w": 320,
+    "frame_h": 240
+  }
+}

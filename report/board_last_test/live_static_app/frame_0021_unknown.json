@@ -1,0 +1,35 @@
+{
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.8524,
+    "kind": "static",
+    "timestamp": 1746313593.6074276
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 6619,
+    "bbox": [
+      102,
+      76,
+      102,
+      164
+    ],
+    "centroid": [
+      148.91705695724428,
+      169.43813264843632
+    ],
+    "touches_edge": true,
+    "angle": 68.19859313964844,
+    "frame_w": 320,
+    "frame_h": 240,
+    "raw_label": "number_2",
+    "raw_score": 0.7048276662826538,
+    "second_label": "number_1",
+    "second_score": 0.7028854489326477,
+    "score_margin": 0.0019422173500061035,
+    "unknown_score": 0.6148240566253662
+  },
+  "image": "report/live_static_app/frame_0021_unknown.jpg",
+  "time": 1746313593.6175795
+}

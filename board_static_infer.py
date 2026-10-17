@@ -13,8 +13,8 @@ class NumpyStaticPredictor:
     def __init__(
         self,
         model_path="models/static_numpy_model.npz",
-        margin_threshold=0.006,
-        unknown_gap_threshold=0.025,
+        margin_threshold=0.0,
+        unknown_gap_threshold=0.0,
         preprocess_fn=None,
     ):
         data = np.load(model_path, allow_pickle=False)
@@ -70,6 +70,7 @@ class NumpyStaticPredictor:
         final_label = raw_label
 
         unknown_score = None
+        reject_reason = None
         if "unknown" in self.labels:
             unknown_idx = int(np.where(self.labels == "unknown")[0][0])
             unknown_score = float(scores[unknown_idx])
@@ -77,9 +78,11 @@ class NumpyStaticPredictor:
         if raw_label != "unknown":
             if margin < self.margin_threshold:
                 final_label = "unknown"
-            if (unknown_score is not None
-                    and score - unknown_score < self.unknown_gap_threshold):
+                reject_reason = "low_margin"
+            elif (unknown_score is not None
+                  and score - unknown_score < self.unknown_gap_threshold):
                 final_label = "unknown"
+                reject_reason = "too_close_to_unknown"
 
         info["raw_label"] = raw_label
         info["raw_score"] = score
@@ -88,6 +91,8 @@ class NumpyStaticPredictor:
         info["score_margin"] = float(margin)
         if unknown_score is not None:
             info["unknown_score"] = unknown_score
+        info["final_label_changed"] = bool(final_label != raw_label)
+        info["reject_reason"] = reject_reason
 
         # Map cosine similarity from [-1, 1] to a bounded confidence-like value.
         confidence = max(0.0, min(1.0, (score + 1.0) / 2.0))
@@ -99,8 +104,18 @@ def main():
     ap.add_argument("--input", required=True)
     ap.add_argument("--model", default="models/static_numpy_model.npz")
     ap.add_argument("--output", default=None)
-    ap.add_argument("--margin-threshold", type=float, default=0.006)
-    ap.add_argument("--unknown-gap-threshold", type=float, default=0.025)
+    ap.add_argument(
+        "--margin-threshold",
+        type=float,
+        default=0.0,
+        help="低于此类别间分数差时拒识为 unknown",
+    )
+    ap.add_argument(
+        "--unknown-gap-threshold",
+        type=float,
+        default=0.0,
+        help="最佳类别与 unknown 分数差低于此值时拒识",
+    )
     ap.add_argument("--backend", default="cpu", choices=("cpu", "pl"))
     ap.add_argument(
         "--overlay",

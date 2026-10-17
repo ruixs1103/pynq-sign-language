@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "root": "dataset/processed_static_aug_v1",
+    "samples": 522,
+    "accuracy": 0.8773946360153256,
+    "raw_accuracy": 0.8773946360153256,
+    "confusion_matrix": [
+      [
+        60,
+        1,
+        2,
+        2,
+        1,
+        14
+      ],
+      [
+        1,
+        69,
+        0,
+        0,
+        1,
+        9
+      ],
+      [
+        0,
+        4,
+        66,
+        3,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        6,
+        69,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        1,
+        4,
+        74,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        120
+      ]
+    ],
+    "labels": [
+      "number_1",
+      "number_2",
+      "number_3",
+      "number_4",
+      "number_5",
+      "unknown"
+    ],
+    "prediction_counts": {
+      "unknown": 150,
+      "number_1": 62,
+      "number_2": 76,
+      "number_4": 79,
+      "number_3": 75,
+      "number_5": 80
+    }
+  }
+}

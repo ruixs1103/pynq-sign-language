@@ -11,6 +11,13 @@ dataset/raw_static_v1/
 dataset/processed_static_v1/
 dataset/rejected_static_*/
 dataset_board_static_*/
+dataset/raw_dynamic_v1/
+dataset/raw_dynamic_v2/
+dataset/raw_dynamic_merged/
+dataset/dynamic_eval_v1/
+dataset/dynamic_eval_v2/
+dataset/processed_static_camera_v1/
+dataset/raw_static_aug_v1/
 archive/legacy_dataset/
 archive/legacy_outputs/
 archive/legacy_models/
@@ -29,6 +36,8 @@ report/*.png
 models/*.npz
 models/*.pkl
 models/*.joblib
+models/*_merged_seq24.npz
+models/*_merged_seq24.joblib
 data/features/
 software/*.npy
 software/*.pth

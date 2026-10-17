@@ -133,12 +133,25 @@ class PLPreprocessor:
         if frame.ndim != 3 or frame.shape[2] < 3:
             raise ValueError(f"expected BGR frame, got shape={frame.shape}")
 
-        resized = cv2.resize(
-            frame[:, :, :3],
-            (self.frame_size, self.frame_size),
-            interpolation=cv2.INTER_AREA,
+        # Keep the camera aspect ratio.  Stretching a 320x240 frame directly
+        # to 360x360 changes the hand silhouette seen by the classifier.
+        source = np.ascontiguousarray(frame[:, :, :3])
+        src_h, src_w = source.shape[:2]
+        scale = min(self.frame_size / float(src_w), self.frame_size / float(src_h))
+        new_w = max(1, int(round(src_w * scale)))
+        new_h = max(1, int(round(src_h * scale)))
+        resized_small = cv2.resize(
+            source, (new_w, new_h), interpolation=cv2.INTER_AREA
         )
-        rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
+        resized = np.zeros(
+            (self.frame_size, self.frame_size, 3), dtype=np.uint8
+        )
+        offset_x = (self.frame_size - new_w) // 2
+        offset_y = (self.frame_size - new_h) // 2
+        resized[offset_y:offset_y + new_h, offset_x:offset_x + new_w] = resized_small
+        # 当前 Overlay 的 AXIS 宽度转换器实际按 BGR 字节顺序传入 HLS。
+        # 不再交换 BGR 通道。
+        rgb = resized
 
         if self.input_layout == "packed_rgb":
             return np.ascontiguousarray(rgb.reshape(-1).astype(np.uint8))

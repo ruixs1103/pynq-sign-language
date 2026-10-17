@@ -1,0 +1,54 @@
+{
+  "shot": 2,
+  "input": "report/static_interactive/shot_002_20250504_040643/input_frame.jpg",
+  "backend": "pl",
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.9031,
+    "kind": "static",
+    "timestamp": 1746331603.7359805
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 780,
+    "bbox": [
+      280,
+      257,
+      55,
+      22
+    ],
+    "centroid": [
+      306.1128205128205,
+      266.18589743589746
+    ],
+    "touches_edge": false,
+    "angle": 90.0,
+    "frame_w": 360,
+    "frame_h": 360,
+    "backend": "pl",
+    "pl_frame_size": 360,
+    "pl_input_layout": "packed_rgb",
+    "raw_label": "unknown",
+    "raw_score": 0.8062536716461182,
+    "second_label": "number_1",
+    "second_score": 0.7668789625167847,
+    "score_margin": 0.039374709129333496,
+    "unknown_score": 0.8062536716461182
+  },
+  "pl": {
+    "overlay_path": "board/overlays/sign_preprocess_2026_1/sign_preprocess_2026_1.bit",
+    "frame_size": 360,
+    "input_layout": "packed_rgb",
+    "input_bytes": 388800,
+    "output_bytes": 129600,
+    "dma_send_max_size": 67108863,
+    "dma_recv_max_size": 67108863,
+    "ip_names": [
+      "axi_dma_0",
+      "axi_gpio_0",
+      "image_preprocess_0",
+      "processing_system7_0"
+    ]
+  }
+}

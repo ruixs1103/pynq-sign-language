@@ -1,0 +1,75 @@
+{
+  "shot": 4,
+  "input": "report/static_pl_test_v1/shot_004_20250504_082114/input_frame.jpg",
+  "backend": "pl",
+  "result": {
+    "label": "number_2",
+    "text": "二",
+    "confidence": 0.8427,
+    "kind": "static",
+    "timestamp": 1746346874.5220318
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 1852,
+    "bbox": [
+      153,
+      161,
+      72,
+      80
+    ],
+    "centroid": [
+      189.8525917926566,
+      210.21274298056156
+    ],
+    "touches_edge": false,
+    "angle": 5.1021647453308105,
+    "frame_w": 360,
+    "frame_h": 360,
+    "mask_inverted": false,
+    "raw_nonzero_ratio": 0.023148148148148147,
+    "raw_border_nonzero_ratio": 0.0,
+    "corrected_nonzero_ratio": 0.023148148148148147,
+    "backend": "pl",
+    "pl_frame_size": 360,
+    "pl_input_layout": "packed_rgb",
+    "raw_label": "number_2",
+    "raw_score": 0.6854736804962158,
+    "second_label": "number_1",
+    "second_score": 0.6420587301254272,
+    "score_margin": 0.043414950370788574,
+    "unknown_score": 0.5557096004486084
+  },
+  "pl": {
+    "overlay_path": "board/overlays/sign_preprocess_2026_1/sign_preprocess_2026_1.bit",
+    "frame_size": 360,
+    "input_layout": "packed_rgb",
+    "input_bytes": 388800,
+    "output_bytes": 129600,
+    "dma_send_max_size": 67108863,
+    "dma_recv_max_size": 67108863,
+    "ip_names": [
+      "axi_dma_0",
+      "axi_gpio_0",
+      "image_preprocess_0",
+      "processing_system7_0"
+    ]
+  },
+  "mask_stats": {
+    "min": 0,
+    "max": 255,
+    "mean": 5.902777777777778,
+    "nonzero": 3000,
+    "nonzero_ratio": 0.023148148148148147,
+    "unique_values": [
+      0,
+      255
+    ]
+  },
+  "artifacts": {
+    "input": "report/static_pl_test_v1/shot_004_20250504_082114/input_frame.jpg",
+    "raw_mask": "report/static_pl_test_v1/shot_004_20250504_082114/pl_mask_raw.png",
+    "corrected_mask": "report/static_pl_test_v1/shot_004_20250504_082114/pl_mask_corrected.png",
+    "binary_128": "report/static_pl_test_v1/shot_004_20250504_082114/binary_128.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "result": {
+    "label": "number_2",
+    "text": "二",
+    "confidence": 0.8904,
+    "kind": "static",
+    "timestamp": 1746310051.0736933
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 7737,
+    "bbox": [
+      96,
+      50,
+      88,
+      164
+    ],
+    "centroid": [
+      137.61884451337727,
+      136.19154711128346
+    ],
+    "touches_edge": false,
+    "angle": 8.392925262451172,
+    "frame_w": 320,
+    "frame_h": 240
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "shot": 3,
+  "input": "report\\static_pc_test_v4\\shot_003_20261015_222337\\input_frame.jpg",
+  "backend": "cpu",
+  "result": {
+    "label": "number_3",
+    "text": "三",
+    "confidence": 0.8868,
+    "kind": "static",
+    "timestamp": 1792074217.2187023
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 12430,
+    "bbox": [
+      84,
+      37,
+      148,
+      203
+    ],
+    "centroid": [
+      167.54794851166534,
+      146.66749798873693
+    ],
+    "touches_edge": true,
+    "angle": 162.52522468566895,
+    "frame_w": 320,
+    "frame_h": 240,
+    "raw_label": "number_3",
+    "raw_score": 0.7736890912055969,
+    "second_label": "number_1",
+    "second_score": 0.7721781730651855,
+    "score_margin": 0.001510918140411377,
+    "unknown_score": 0.6870959997177124,
+    "final_label_changed": false,
+    "reject_reason": null
+  },
+  "pl": null,
+  "mask_stats": null,
+  "artifacts": {
+    "input": "report\\static_pc_test_v4\\shot_003_20261015_222337\\input_frame.jpg",
+    "raw_mask": null,
+    "corrected_mask": null,
+    "binary_128": "report\\static_pc_test_v4\\shot_003_20261015_222337\\binary_128.png"
+  }
+}

@@ -39,7 +39,14 @@ def main():
             continue
         out_dir = os.path.join(args.output, label)
         os.makedirs(out_dir, exist_ok=True)
-        stats = {"total": 0, "ok": 0, "no_hand": 0, "touches_edge": 0}
+        stats = {
+            "total": 0,
+            "ok": 0,
+            "no_hand": 0,
+            "touches_edge": 0,
+            "severely_cropped": 0,
+            "max_edge_contact_ratio": 0.0,
+        }
         for name in sorted(os.listdir(label_dir)):
             if not name.lower().endswith(IMG_EXTS):
                 continue
@@ -54,6 +61,12 @@ def main():
                 continue
             if info["touches_edge"]:
                 stats["touches_edge"] += 1
+            if info["severely_cropped"]:
+                stats["severely_cropped"] += 1
+            stats["max_edge_contact_ratio"] = max(
+                stats["max_edge_contact_ratio"],
+                float(info["edge_contact_ratio"]),
+            )
             stem = os.path.splitext(name)[0]
             cv2.imwrite(os.path.join(out_dir, stem + ".png"), binary)
             stats["ok"] += 1

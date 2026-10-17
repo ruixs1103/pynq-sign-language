@@ -1,0 +1,150 @@
+{
+  "input": "/dev/video0",
+  "overlay": "board/overlays/sign_preprocess_2026_1/sign_preprocess_2026_1.bit",
+  "pl": {
+    "overlay_path": "board/overlays/sign_preprocess_2026_1/sign_preprocess_2026_1.bit",
+    "frame_size": 360,
+    "input_layout": "packed_rgb",
+    "input_bytes": 388800,
+    "output_bytes": 129600,
+    "dma_send_max_size": 67108863,
+    "dma_recv_max_size": 67108863,
+    "ip_names": [
+      "axi_dma_0",
+      "axi_gpio_0",
+      "image_preprocess_0",
+      "processing_system7_0"
+    ]
+  },
+  "pl_elapsed_s": 0.03427004814147949,
+  "mask_stats": {
+    "shape": [
+      360,
+      360
+    ],
+    "dtype": "uint8",
+    "min": 0,
+    "max": 255,
+    "mean": 0.44074074074074077,
+    "nonzero": 224,
+    "nonzero_ratio": 0.0017283950617283952,
+    "unique_values_sample": [
+      0,
+      255
+    ]
+  },
+  "cpu_preprocess": {
+    "hand_found": true,
+    "area": 11269,
+    "bbox": [
+      96,
+      0,
+      104,
+      203
+    ],
+    "centroid": [
+      145.60182802378205,
+      71.35318129381488
+    ],
+    "touches_edge": true,
+    "angle": 90.0,
+    "frame_w": 320,
+    "frame_h": 240
+  },
+  "pl_preprocess": {
+    "hand_found": true,
+    "area": 81,
+    "bbox": [
+      295,
+      259,
+      18,
+      6
+    ],
+    "centroid": [
+      303.25925925925924,
+      261.77777777777777
+    ],
+    "touches_edge": false,
+    "angle": 0.0,
+    "frame_w": 360,
+    "frame_h": 360,
+    "backend": "pl",
+    "pl_frame_size": 360,
+    "pl_input_layout": "packed_rgb"
+  },
+  "cpu_pl_binary_diff": {
+    "different_pixels": 4888,
+    "different_ratio": 0.29833984375
+  },
+  "cpu_result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.8172,
+    "kind": "static",
+    "timestamp": 1746331267.885798
+  },
+  "cpu_predict_info": {
+    "hand_found": true,
+    "area": 11269,
+    "bbox": [
+      96,
+      0,
+      104,
+      203
+    ],
+    "centroid": [
+      145.60182802378205,
+      71.35318129381488
+    ],
+    "touches_edge": true,
+    "angle": 90.0,
+    "frame_w": 320,
+    "frame_h": 240,
+    "raw_label": "unknown",
+    "raw_score": 0.634432315826416,
+    "second_label": "number_3",
+    "second_score": 0.63043212890625,
+    "score_margin": 0.004000186920166016,
+    "unknown_score": 0.634432315826416
+  },
+  "pl_result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.848,
+    "kind": "static",
+    "timestamp": 1746331268.1144216
+  },
+  "pl_predict_info": {
+    "hand_found": true,
+    "area": 81,
+    "bbox": [
+      295,
+      259,
+      18,
+      6
+    ],
+    "centroid": [
+      303.25925925925924,
+      261.77777777777777
+    ],
+    "touches_edge": false,
+    "angle": 0.0,
+    "frame_w": 360,
+    "frame_h": 360,
+    "backend": "pl",
+    "pl_frame_size": 360,
+    "pl_input_layout": "packed_rgb",
+    "raw_label": "unknown",
+    "raw_score": 0.695959746837616,
+    "second_label": "number_5",
+    "second_score": 0.6577077507972717,
+    "score_margin": 0.03825199604034424,
+    "unknown_score": 0.695959746837616
+  },
+  "artifacts": {
+    "input_frame": "report/pl_smoke_number1/input_frame.jpg",
+    "cpu_binary": "report/pl_smoke_number1/cpu_binary_128.png",
+    "pl_mask": "report/pl_smoke_number1/pl_mask.png",
+    "pl_binary": "report/pl_smoke_number1/pl_binary_128.png"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 1.0,
+    "kind": "static",
+    "timestamp": 1746313607.3236144
+  },
+  "preprocess": {
+    "hand_found": false,
+    "area": 0,
+    "bbox": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "centroid": [
+      0.0,
+      0.0
+    ],
+    "touches_edge": false,
+    "angle": 0.0,
+    "frame_w": 320,
+    "frame_h": 240
+  },
+  "image": "report/live_static_app/frame_0034_unknown.jpg",
+  "time": 1746313607.333908
+}

@@ -1,0 +1,17 @@
+{
+  "count": 328,
+  "timestamp": 1746354239.2649167,
+  "seq_len": 16,
+  "stride": 4,
+  "backend": "pl",
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 1.0,
+    "kind": "dynamic",
+    "timestamp": 1746354239.2648277
+  },
+  "scores": {
+    "error": "extract_sequence_features() got an unexpected keyword argument 'preprocess_fn'"
+  }
+}

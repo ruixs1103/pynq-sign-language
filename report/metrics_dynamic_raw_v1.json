@@ -1,0 +1,5 @@
+{
+  "classifier": "rf",
+  "seq_len": 16,
+  "train_samples": 109
+}

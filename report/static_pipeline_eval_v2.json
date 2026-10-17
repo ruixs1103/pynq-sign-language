@@ -1,0 +1,177 @@
+{
+  "dataset": {
+    "root": "dataset\\processed_static_aug_v1",
+    "samples": 522,
+    "accuracy": 0.8601532567049809,
+    "raw_accuracy": 0.8773946360153256,
+    "confusion_matrix": [
+      [
+        59,
+        1,
+        2,
+        0,
+        1,
+        17
+      ],
+      [
+        1,
+        68,
+        0,
+        0,
+        1,
+        10
+      ],
+      [
+        0,
+        4,
+        66,
+        2,
+        2,
+        6
+      ],
+      [
+        0,
+        2,
+        4,
+        64,
+        1,
+        9
+      ],
+      [
+        0,
+        0,
+        1,
+        4,
+        70,
+        5
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        122
+      ]
+    ],
+    "labels": [
+      "number_1",
+      "number_2",
+      "number_3",
+      "number_4",
+      "number_5",
+      "unknown"
+    ],
+    "prediction_counts": {
+      "unknown": 169,
+      "number_1": 60,
+      "number_2": 75,
+      "number_3": 73,
+      "number_5": 75,
+      "number_4": 70
+    }
+  },
+  "board_report": {
+    "root": "board_report_20261014\\report\\static_interactive_v4",
+    "samples": 2,
+    "prediction_counts": {
+      "number_1": 2
+    },
+    "rows": [
+      {
+        "binary": "board_report_20261014\\report\\static_interactive_v4\\shot_001_20250504_043501\\binary_128.png",
+        "input": "report/static_interactive_v4/shot_001_20250504_043501/input_frame.jpg",
+        "result": {
+          "label": "number_1",
+          "text": "一",
+          "confidence": 0.8719,
+          "kind": "static",
+          "timestamp": 1792068769.263411
+        },
+        "raw_label": "number_1",
+        "raw_score": 0.7437017560005188,
+        "second_label": "number_2",
+        "second_score": 0.7147302627563477,
+        "score_margin": 0.028971493244171143,
+        "preprocess": {
+          "hand_found": true,
+          "area": 18283,
+          "bbox": [
+            189,
+            57,
+            129,
+            303
+          ],
+          "centroid": [
+            247.85418148006346,
+            232.4614122408795
+          ],
+          "touches_edge": true,
+          "angle": 76.27289581298828,
+          "frame_w": 360,
+          "frame_h": 360,
+          "mask_inverted": true,
+          "raw_nonzero_ratio": 0.8542206790123457,
+          "raw_border_nonzero_ratio": 0.9229166666666667,
+          "corrected_nonzero_ratio": 0.1457793209876543,
+          "backend": "pl",
+          "pl_frame_size": 360,
+          "pl_input_layout": "packed_rgb",
+          "raw_label": "number_1",
+          "raw_score": 0.743701696395874,
+          "second_label": "number_2",
+          "second_score": 0.7147302627563477,
+          "score_margin": 0.028971433639526367,
+          "unknown_score": 0.5910555124282837
+        }
+      },
+      {
+        "binary": "board_report_20261014\\report\\static_interactive_v4\\shot_002_20250504_043608\\binary_128.png",
+        "input": "report/static_interactive_v4/shot_002_20250504_043608/input_frame.jpg",
+        "result": {
+          "label": "number_1",
+          "text": "一",
+          "confidence": 0.9063,
+          "kind": "static",
+          "timestamp": 1792068769.2654111
+        },
+        "raw_label": "number_1",
+        "raw_score": 0.8125165700912476,
+        "second_label": "number_2",
+        "second_score": 0.7925029397010803,
+        "score_margin": 0.020013630390167236,
+        "preprocess": {
+          "hand_found": true,
+          "area": 20575,
+          "bbox": [
+            169,
+            103,
+            150,
+            257
+          ],
+          "centroid": [
+            246.06308626974484,
+            249.77156743620898
+          ],
+          "touches_edge": true,
+          "angle": 81.6240005493164,
+          "frame_w": 360,
+          "frame_h": 360,
+          "mask_inverted": true,
+          "raw_nonzero_ratio": 0.7966898148148148,
+          "raw_border_nonzero_ratio": 0.5569444444444445,
+          "corrected_nonzero_ratio": 0.20331018518518518,
+          "backend": "pl",
+          "pl_frame_size": 360,
+          "pl_input_layout": "packed_rgb",
+          "raw_label": "number_1",
+          "raw_score": 0.8125165700912476,
+          "second_label": "number_2",
+          "second_score": 0.7925031185150146,
+          "score_margin": 0.02001345157623291,
+          "unknown_score": 0.7098630666732788
+        }
+      }
+    ]
+  }
+}

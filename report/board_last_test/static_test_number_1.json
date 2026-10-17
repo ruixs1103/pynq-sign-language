@@ -1,0 +1,27 @@
+{
+  "result": {
+    "label": "number_1",
+    "text": "一",
+    "confidence": 0.8917,
+    "kind": "static",
+    "timestamp": 1746310019.355729
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 3787,
+    "bbox": [
+      70,
+      83,
+      71,
+      120
+    ],
+    "centroid": [
+      106.38737787166623,
+      154.1705835753895
+    ],
+    "touches_edge": false,
+    "angle": 22.954086303710938,
+    "frame_w": 320,
+    "frame_h": 240
+  }
+}

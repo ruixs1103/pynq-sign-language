@@ -1,0 +1,20 @@
+{
+  "count": 376,
+  "timestamp": 1746352272.1073575,
+  "seq_len": 16,
+  "stride": 4,
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.305,
+    "kind": "dynamic",
+    "timestamp": 1746352272.1072764
+  },
+  "scores": {
+    "goodbye": 0.17000000178813934,
+    "hello": 0.1599999964237213,
+    "help": 0.19499999284744263,
+    "thanks": 0.17000000178813934,
+    "unknown": 0.3050000071525574
+  }
+}

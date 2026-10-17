@@ -1,0 +1,33 @@
+{
+  "result": {
+    "label": "unknown",
+    "text": "未知",
+    "confidence": 0.9133,
+    "kind": "static",
+    "timestamp": 1746311287.388211
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 5841,
+    "bbox": [
+      64,
+      64,
+      74,
+      106
+    ],
+    "centroid": [
+      100.44547166581064,
+      115.69936654682418
+    ],
+    "touches_edge": false,
+    "angle": 11.309932708740234,
+    "frame_w": 320,
+    "frame_h": 240,
+    "raw_label": "number_5",
+    "raw_score": 0.8265185952186584,
+    "second_label": "unknown",
+    "second_score": 0.8160155415534973,
+    "score_margin": 0.010503053665161133,
+    "unknown_score": 0.8160155415534973
+  }
+}

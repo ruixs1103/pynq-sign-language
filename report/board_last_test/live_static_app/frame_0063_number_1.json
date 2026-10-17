@@ -1,0 +1,35 @@
+{
+  "result": {
+    "label": "number_1",
+    "text": "一",
+    "confidence": 0.8546,
+    "kind": "static",
+    "timestamp": 1746313638.2432384
+  },
+  "preprocess": {
+    "hand_found": true,
+    "area": 7957,
+    "bbox": [
+      104,
+      79,
+      98,
+      161
+    ],
+    "centroid": [
+      149.1579741108458,
+      167.06422018348624
+    ],
+    "touches_edge": true,
+    "angle": 81.1317367553711,
+    "frame_w": 320,
+    "frame_h": 240,
+    "raw_label": "number_1",
+    "raw_score": 0.7092422246932983,
+    "second_label": "number_2",
+    "second_score": 0.7005728483200073,
+    "score_margin": 0.008669376373291016,
+    "unknown_score": 0.6209360361099243
+  },
+  "image": "report/live_static_app/frame_0063_number_1.jpg",
+  "time": 1746313638.2684448
+}

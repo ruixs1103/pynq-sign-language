@@ -1,0 +1,52 @@
+{
+  "classifier": "rf",
+  "seq_len": 24,
+  "train_samples": 244,
+  "test_samples": 54,
+  "accuracy": 0.8333333333333334,
+  "macro_f1": 0.8257952069716776,
+  "confusion_matrix": [
+    [
+      10,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      11,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      11,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      0,
+      8
+    ]
+  ],
+  "labels": [
+    "hello",
+    "thanks",
+    "goodbye",
+    "help",
+    "unknown"
+  ]
+}

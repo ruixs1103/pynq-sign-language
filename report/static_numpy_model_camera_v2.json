@@ -1,0 +1,22 @@
+{
+  "model": "models/static_numpy_model_camera_v2.npz",
+  "feature_version": "shape_v2",
+  "feature_dim": 1176,
+  "labels": [
+    "number_1",
+    "number_2",
+    "number_3",
+    "number_4",
+    "number_5",
+    "unknown"
+  ],
+  "counts": {
+    "number_1": 110,
+    "number_2": 110,
+    "number_3": 110,
+    "number_4": 110,
+    "number_5": 110,
+    "unknown": 80
+  },
+  "prototype_count": 630
+}

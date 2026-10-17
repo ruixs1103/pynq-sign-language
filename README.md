@@ -117,6 +117,31 @@ python3 board_static_live_json.py --model models/static_numpy_model.npz --interv
 python .\pc_speak_static.py
 ```
 
+### 动态产品演示（推荐）
+
+板端在 Jupyter 中运行，摄像头、动态推理、JSON 和带结果画面由同一个进程完成：
+
+```python
+%cd /home/xilinx/sign-language-pynq
+%run board_dynamic_live_json.py --product --model models/dynamic_model_numpy.npz --camera /dev/video0 --seq-len 16 --stride 4
+```
+
+电脑端另开 PowerShell 播报板端结果：
+
+```powershell
+cd D:\PYNQ\projects\sign-language-pynq
+.\.venv\Scripts\Activate.ps1
+python pc_speak_dynamic.py
+```
+
+动态语音默认置信度阈值为 `0.30`。板端 Linux 摄像头优先使用 V4L2；如 `/dev/video0` 不可用，可改用 `/dev/video1`。
+
+## 当前验证边界
+
+动态和静态 NumPy 模型可在板端运行，电脑端可读取 JSON 并播报。当前 Overlay 已完成加载、GPIO 和基础接口验证，但 DMA 全帧传输仍需分块传输设计和实测数据，暂不能将完整 FPGA 加速写成已完成。真实摄像头静态准确率需使用独立采集集重新确认。
+
+项目审计记录见 `report/project_audit_20261017.md`。
+
 ## FPGA 工程
 
 `fpga/` 目录包含 Vivado/HLS 相关工程文件。仓库会保留关键源文件、工程文件和必要 Overlay，忽略 `.cache`、`.gen`、`.runs`、HLS `solution*/syn`、`solution*/impl` 等自动生成目录。

@@ -38,8 +38,11 @@ def _zero_features():
     }
 
 
-def _frame_features(frame_bgr):
-    binary, info = preprocess_frame(frame_bgr)
+def _frame_features(frame_bgr, preprocess_fn=preprocess_frame):
+    if isinstance(frame_bgr, tuple) and len(frame_bgr) == 2:
+        binary, info = frame_bgr
+    else:
+        binary, info = preprocess_fn(frame_bgr)
     if binary is None:
         return None
     h_img, w_img = info["frame_h"], info["frame_w"]
@@ -55,7 +58,8 @@ def _frame_features(frame_bgr):
     }
 
 
-def extract_sequence_features(frames, seq_len=DEFAULT_SEQ_LEN):
+def extract_sequence_features(frames, seq_len=DEFAULT_SEQ_LEN,
+                              preprocess_fn=preprocess_frame):
     """提取固定长度序列特征，返回 float32 一维向量。
 
     至少需要 2 帧，否则抛出 ValueError。
@@ -68,7 +72,7 @@ def extract_sequence_features(frames, seq_len=DEFAULT_SEQ_LEN):
 
     feats, missing, prev = [], 0, None
     for frame in sampled:
-        d = _frame_features(frame)
+        d = _frame_features(frame, preprocess_fn=preprocess_fn)
         if d is None:
             missing += 1
             d = prev if prev is not None else _zero_features()
