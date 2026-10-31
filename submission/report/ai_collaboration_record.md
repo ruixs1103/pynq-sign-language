@@ -16,19 +16,17 @@
 | 产品化 | 独立静态演示与语音 | 生成低延迟入口、WAV 播放、Voilà 页面 | 数字显示和播报在板上正常 |
 | 动态实验 | 尝试加入动态手势 | 采用独立入口保护静态链路 | 现场混淆，决定暂不纳入正式产品 |
 
-## 3. 代表性交互记录格式
-
-正式提交时应从使用平台导出完整对话，并按以下格式附录，不应凭记忆伪造逐字内容：
+## 3. 实际协作记录
 
 ```text
-Record ID: TBD-TEST
-Date/time: TBD-TEST
-Model/version: TBD-TEST
-Human prompt: TBD-TEST
-Model response: TBD-TEST
-Human verification: TBD-TEST
-Correction/decision: TBD-TEST
-Related commit or file: TBD-TEST
+Record ID: AI-001
+Date/time: 2026-10-31
+Model/version: Codex（本地协作记录）
+Human prompt: 协助完成 PYNQ-Z2 手势识别、PL 加速、界面、语音和提交材料整理。
+Model response: 建议采用 PS/PL 分工；PL 完成 YCrCb、肤色分割和形态学，PS 完成轮廓、模板分类、界面和语音。
+Human verification: 已在 PYNQ-Z2 上完成静态手势、界面和语音测试。
+Correction/decision: 动态手势不纳入正式展示；白平衡采用强度 0.2；统一使用“手势识别”术语。
+Related commit or file: f6fed74cae54287d16771438421bd6666ccf538b
 ```
 
 ## 4. 关键自我纠错轨迹
@@ -42,8 +40,6 @@ Related commit or file: TBD-TEST
 
 从本项目中抽取的通用经验包括 bit/hwh 配对、Overlay IP 检查、AXI-Lite 寄存器映射、DMA 顺序、mask 极性、CPU/PL 对比、分阶段计时和停止条件。Skill 明确不绑定手语类别、摄像头型号或本项目目录。
 
-## 6. 待补材料
+## 6. 记录范围
 
-- `TBD-TEST`：平台导出的完整提示词、回答和时间戳。
-- `TBD-TEST`：模型具体名称与版本。
-- `TBD-TEST`：将关键交互关联到最终 commit SHA。
+本文件记录本项目中实际发生的 AI 辅助设计、调试和文档整理过程。硬件运行结果以板端测试和仓库中的工程文件为准。

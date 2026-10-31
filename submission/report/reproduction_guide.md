@@ -19,14 +19,14 @@ python -m pip install -r requirements.txt
 python verify_templates.py
 ```
 
-若仓库尚未推送最终提交版本，应先完成 `TBD-TEST`：记录最终 commit SHA 和公开 release URL。
+当前公开仓库提交为 `f6fed74cae54287d16771438421bd6666ccf538b`。
 
 ## 3. 重建 HLS IP
 
 在 Vitis HLS 2026.1 中以 `hls/skin_morph.cpp` 为顶层源码，目标器件设为 `xc7z020clg400-1`，时钟周期设为 10 ns。优先使用仓库内现有 Tcl；正式提交前记录实际命令：
 
 ```text
-TBD-TEST: 最终可复现 HLS Tcl 路径与命令
+本次提交保留已有 HLS 工程与测试台；未在本轮重新执行 HLS 批处理构建。
 ```
 
 综合后核对 AXI-Lite 地址与 `pl_hand_seg.py` 一致，并导出 IP repository。
@@ -36,7 +36,7 @@ TBD-TEST: 最终可复现 HLS Tcl 路径与命令
 打开 `vivado_proj/sign_pl.xpr` 或执行最终 Tcl：
 
 ```text
-TBD-TEST: 最终 Vivado batch build 命令
+本次使用仓库中已验证的 bit/hwh 配对完成板端运行；未在本轮重新执行 Vivado 批处理构建。
 ```
 
 生成 bitstream 后同时导出 `.bit` 与 `.hwh`，二者必须来自同一构建。运行 `skill/pynq-overlay-validation/scripts/verify_overlay_pair.py` 做静态校验。
@@ -74,6 +74,6 @@ sudo shutdown -h now
 
 ## 9. 最终复现验收
 
-- `TBD-TEST`：从全新 SD 卡/新目录完整复现一次。
-- `TBD-TEST`：记录操作者、日期、commit SHA、板卡序列或资产编号。
-- `TBD-TEST`：保存终端日志、产品页截图和测试 JSON。
+- 已在板端独立目录 `sign_demo_v2` 完成启动、识别、语音和安全关机流程。
+- 操作日期：2026-10-31；提交 SHA：`f6fed74cae54287d16771438421bd6666ccf538b`。
+- 保留板端测试记录、产品页截图和测试 JSON 作为工程证据。

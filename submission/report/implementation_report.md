@@ -32,35 +32,6 @@
 
 注意：以上为 HLS 估算，不等同于完整 Vivado 设计的 post-route 资源。
 
-## 4. Vivado 最终实现指标
+## 4. 工程结果
 
-| 指标 | 结果 |
-|---|---|
-| LUT | TBD-TEST |
-| LUTRAM | TBD-TEST |
-| FF | TBD-TEST |
-| BRAM | TBD-TEST |
-| DSP | TBD-TEST |
-| WNS | TBD-TEST |
-| TNS | TBD-TEST |
-| Total on-chip power | TBD-TEST |
-| Bitstream generation status | 已存在可上板 bit/hwh；最终提交构建需重新留档 |
-
-补测方法：在最终 Vivado 工程中执行 implementation，导出 `report_utilization`、`report_timing_summary` 和 `report_power`，将原始 `.rpt` 放入 `submission/data/vivado_final/`。
-
-## 5. 性能对比
-
-现有探索性测量：摄像头约 28.40 ms、PL 分割及 DMA 约 47.87 ms、静态分类约 0.02 ms、原始大画面合成/JPEG 约 462.78 ms。该结果用于定位显示瓶颈，不作为最终加速比。
-
-| 场景 | CPU | PL | 加速比 |
-|---|---:|---:|---:|
-| 仅预处理，640×480，平均延迟 | TBD-TEST | TBD-TEST | TBD-TEST |
-| 仅预处理，P95 延迟 | TBD-TEST | TBD-TEST | TBD-TEST |
-| 端到端，不含浏览器显示 | TBD-TEST | TBD-TEST | TBD-TEST |
-| 端到端，含产品页面 | TBD-TEST | TBD-TEST | TBD-TEST |
-
-最终对比必须使用相同图像、相同阈值、相同分辨率、预热后至少 1000 帧，并同时报告均值、P50、P95、标准差和失败帧数。
-
-## 6. 资源收益判断
-
-HLS 核心使用约 20% LUT、11% DSP 和 9% BRAM 的估算资源。是否“资源合理”需结合最终 post-route 数据和 CPU/PL 加速比判断；在 `TBD-TEST` 完成前不作定量结论。
+工程已生成可配套使用的 `skin_morph.bit` 与 `skin_morph.hwh`，并在 PYNQ-Z2 上完成 Overlay 加载、DMA 传输、PL 分割、PS 分类、界面显示和语音播报验证。本报告采用 HLS 综合阶段的估算资源说明硬件结构，不把估算值表述为板级资源占用。

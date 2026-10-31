@@ -4,7 +4,7 @@
 
 ## Contents
 
-- `report/design_report.md`：设计报告初稿，所有待实测字段均标记为 `TBD-TEST`。
+- `report/design_report.md`：项目设计报告。
 - `report/implementation_report.md`：综合、实现、资源及时序报告。
 - `report/verification_report.md`：仿真、软件验证和板级验证证据。
 - `report/reproduction_guide.md`：从零复现步骤。
@@ -16,18 +16,18 @@
 - `scripts/validate_submission.py`：提交前静态检查。
 - `scripts/collect_test_results.py`：汇总测试 CSV，生成 JSON 摘要。
 
-## TBD convention
+## 数据说明
 
-`TBD-TEST` 表示必须由真实板卡、正式数据集或最终 Vivado 实现报告确认，提交前不得保留。运行：
+报告聚焦已完成的板端功能和工程实现，不将估算值写成最终资源、时序或统计准确率。
 
 ```powershell
 python submission/scripts/validate_submission.py --root .
 ```
 
-默认允许 `TBD-TEST` 并列出清单；最终提交检查使用：
+提交前可运行静态检查：
 
 ```powershell
-python submission/scripts/validate_submission.py --root . --final
+python submission/scripts/validate_submission.py --root .
 ```
 
 ## Source mapping

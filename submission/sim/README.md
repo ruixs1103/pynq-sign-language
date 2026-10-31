@@ -9,7 +9,7 @@ python -m pytest -q
 
 ## HLS
 
-Use `hls/tb_skin_morph.cpp` for C simulation and co-simulation. Archive the exact command and logs as `TBD-TEST`.
+Use `hls/tb_skin_morph.cpp` for C simulation and co-simulation. 本次提交保留已有测试台和历史产物，不把未重跑的仿真写成新的定量结果。
 
 ## Board
 

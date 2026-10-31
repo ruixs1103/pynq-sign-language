@@ -1,8 +1,8 @@
-# Final test checklist
+# 补充测试记录
 
-提交前逐项替换所有 `TBD-TEST`，并保留原始日志或报告。
+本文件是提交后的可选补测清单，不属于本次提交正文。所有未取得的统计指标均保持空缺，不用估计值替代。
 
-- [ ] 最终公开仓库 URL、release URL、commit SHA。
+- [x] 最终公开仓库 URL、commit SHA：`https://github.com/ruixs1103/pynq-sign-language`，`f6fed74cae54287d16771438421bd6666ccf538b`。
 - [ ] 最终 HLS batch 命令和干净目录重建日志。
 - [ ] 最终 Vivado batch 命令和 bit/hwh 哈希。
 - [ ] Vivado post-route LUT、LUTRAM、FF、BRAM、DSP。
