@@ -68,7 +68,7 @@ DMA关键顺序是输入复制和flush、接收缓冲flush、启动接收、启�
 先打开PowerShell到项目根目录，再用已建立的专用环境：
 
 ```powershell
-Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手语识别系统\code\sign-language-pynq'
+Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手势识别系统\code\sign-language-pynq'
 & .venv_role_c\Scripts\python.exe -m board.verify_role_c
 ```
 

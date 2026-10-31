@@ -1,6 +1,6 @@
 # 角色 C 最终交付报告
 
-日期：2026-10-09。项目根目录：`D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手语识别系统\code\sign-language-pynq`。
+日期：2026-10-09。项目根目录：`D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手势识别系统\code\sign-language-pynq`。
 
 **角色 C 可独立验证的工作已完成并实际落地。当前计划的105项测试全部通过，其中C新增84项、B既有21项；完整加入旧版根目录测试后为124项通过、2项既有乱码断言失败。真实板卡、图像DMA与FPGA性能验收尚未完成。**
 
@@ -123,7 +123,7 @@ B现有的同步音频钩子已经兼容。A板端实时主循环建议用 `Audi
 一键离线复现：
 
 ```powershell
-Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手语识别系统\code\sign-language-pynq'
+Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手势识别系统\code\sign-language-pynq'
 & .venv_role_c\Scripts\python.exe -m board.verify_role_c
 ```
 

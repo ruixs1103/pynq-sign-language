@@ -7,7 +7,7 @@
 本轮专用环境是 `.venv_role_c`，原 `.venv` 保留。下面的路径是当前工作区绝对路径：
 
 ```powershell
-Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手语识别系统\code\sign-language-pynq'
+Set-Location 'D:\01_Projects\FPGA创新赛\比赛项目——基于PYNQ的手势识别系统\code\sign-language-pynq'
 & .venv_role_c\Scripts\python.exe -m board.verify_role_c
 ```
 

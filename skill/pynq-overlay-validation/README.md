@@ -2,7 +2,7 @@
 
 ## 适用范围
 
-适用于带 AXI-Lite 控制与 AXI DMA/AXI4-Stream 数据通道的 PYNQ Overlay，包括图像预处理、滤波、变换和自定义流式计算。它不绑定手语识别、特定摄像头或特定板卡。
+适用于带 AXI-Lite 控制与 AXI DMA/AXI4-Stream 数据通道的 PYNQ Overlay，包括图像预处理、滤波、变换和自定义流式计算。它不绑定手势识别、特定摄像头或特定板卡。
 
 ## 使用方法
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-PYNQ-Z2 + Logitech C270 手语识别 demo
+PYNQ-Z2 + Logitech C270 手势识别 demo
   静态：1 / 2 / 3 / 4 / 5 / 未知
   动态：你好 / 谢谢 / 再见 / 帮助 / 未知
 
