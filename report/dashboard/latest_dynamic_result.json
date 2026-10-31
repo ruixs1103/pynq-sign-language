@@ -1,17 +1,21 @@
 {
-  "count": 328,
-  "timestamp": 1746354239.2649167,
-  "seq_len": 16,
+  "count": 264,
+  "timestamp": 1746366351.9400766,
+  "seq_len": 24,
   "stride": 4,
-  "backend": "pl",
+  "backend": "cpu",
   "result": {
-    "label": "unknown",
-    "text": "未知",
-    "confidence": 1.0,
+    "label": "hello",
+    "text": "你好",
+    "confidence": 0.285,
     "kind": "dynamic",
-    "timestamp": 1746354239.2648277
+    "timestamp": 1746366351.9400077
   },
   "scores": {
-    "error": "extract_sequence_features() got an unexpected keyword argument 'preprocess_fn'"
+    "goodbye": 0.09000000357627869,
+    "hello": 0.2849999964237213,
+    "help": 0.07500000298023224,
+    "thanks": 0.27000001072883606,
+    "unknown": 0.2800000011920929
   }
 }

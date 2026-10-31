@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "confirmed": {
+    "board": "PYNQ-Z2",
+    "device": "xc7z020-clg400-1",
+    "vivado_version": "2026.1",
+    "vitis_hls_version": "2026.1",
+    "pynq_version": "3.1.1",
+    "opencv_version": "4.5.4",
+    "hls_target_clock_ns": 10.0,
+    "hls_estimated_clock_ns": 7.396,
+    "hls_resources": {
+      "bram_18k": 26,
+      "dsp": 25,
+      "ff": 10656,
+      "lut": 10805
+    },
+    "camera_test": {
+      "resolution": "640x480",
+      "frames_ok": 100,
+      "measured_fps": 16.470342991887268
+    },
+    "exploratory_stage_latency_ms": {
+      "camera": 28.4,
+      "pl_segmentation_and_dma": 47.87,
+      "static_recognition": 0.02,
+      "original_display_jpeg": 462.78,
+      "lightweight_display_jpeg": 87.78
+    },
+    "final_board_acceptance_2026_10_31": {
+      "static_gestures_checked": ["1", "2", "3", "4", "5", "THUMBS UP", "STOP"],
+      "all_labels_displayed_correctly": true,
+      "all_voice_outputs_correct": true,
+      "pl_segmentation_confirmed": true,
+      "continuous_run_minutes": 5,
+      "obvious_stutter_or_crash": false,
+      "safe_shutdown_completed": true,
+      "note": "Functional acceptance only; repetitions per class, FPS and per-frame latency were not recorded."
+    }
+  },
+  "tbd_test": {
+    "final_vivado_utilization": null,
+    "final_wns_ns": null,
+    "final_tns_ns": null,
+    "final_power_w": null,
+    "cpu_preprocess_latency_ms": null,
+    "pl_preprocess_latency_ms": null,
+    "preprocess_speedup": null,
+    "end_to_end_fps": null,
+    "static_accuracy": null,
+    "unknown_recall": null,
+    "cpu_pl_mask_iou": null,
+    "stability_1000_frames": null,
+    "final_commit_sha": null
+  }
+}

@@ -65,6 +65,12 @@ fpga/hls/**/solution*/syn/
 fpga/hls/**/solution*/*.aps
 fpga/hls/**/solution*/solution*_data.json
 fpga/hls/**/solution*/solution*.directive
+hls/**/solution*/
+hls/skin_morph/
+hls/skin_morph_cosim/
+
+# Local review/quarantine data
+dataset/_quarantine/
 
 # Board dependency/output bundles
 board_deps/
